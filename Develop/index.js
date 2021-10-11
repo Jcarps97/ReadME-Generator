@@ -13,7 +13,8 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt([
+    inquirer
+        .prompt([
         {
             type: 'input',
             message: 'Project Title',
