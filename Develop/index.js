@@ -8,7 +8,17 @@ const questions = [];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile()
+    const textMessage = `Here are the answers to the questions 
+    Entry 1: ${response.title}
+    Entry 2: ${response.description}
+    Entry 3: ${response.installation}
+    Entry 4: ${response.usage}
+    Entry 5: ${response.contribution}
+    Entry 6: ${response.test}
+    Entry 7: ${response.github}
+    Entry 8: ${response.email}
+    `
+        fs.writeFile("README.md", textMessage)
 }
 
 // TODO: Create a function to initialize app
@@ -56,7 +66,9 @@ function init() {
             name: 'email',
         },
     ])
-    .then()
+    .then(response => {
+        writeToFile(response)
+    })
 }
 
 // Function call to initialize app
