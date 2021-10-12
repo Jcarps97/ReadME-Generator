@@ -4,21 +4,24 @@ const Choices = require("inquirer/lib/objects/choices");
 const fs = require("fs");
 
 // TODO: Create an array of questions for user input
-const questions = [];
+// const questions = [];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    const textMessage = `Here are the answers to the questions 
-    Entry 1: ${response.title}
-    Entry 2: ${response.description}
-    Entry 3: ${response.installation}
-    Entry 4: ${response.usage}
-    Entry 5: ${response.contribution}
-    Entry 6: ${response.test}
-    Entry 7: ${response.github}
-    Entry 8: ${response.email}
+// fileName, data
+function writeToFile(data) {
+    const textMessage = ` 
+    Entry 1: ${data.title}
+   - Entry 2: ${data.description}
+   - Entry 3: ${data.installation}
+   - Entry 4: ${data.usage}
+   - Entry 5: ${data.contribution}
+    Entry 6: ${data.test}
+    Entry 7: ${data.github}
+    Entry 8: ${data.email}
     `
-        fs.writeFile("README.md", textMessage)
+        fs.writeFile("test.README.md", textMessage, function(error){
+            console.log(error)
+        })
 }
 
 // TODO: Create a function to initialize app
