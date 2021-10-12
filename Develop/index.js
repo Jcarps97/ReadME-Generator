@@ -9,15 +9,26 @@ const fs = require("fs");
 // TODO: Create a function to write README file
 // fileName, data
 function writeToFile(data) {
-    const textMessage = ` 
-    Entry 1: ${data.title}
-   - Entry 2: ${data.description}
-   - Entry 3: ${data.installation}
-   - Entry 4: ${data.usage}
-   - Entry 5: ${data.contribution}
-    Entry 6: ${data.test}
-    Entry 7: ${data.github}
-    Entry 8: ${data.email}
+    // [Description](#description)
+    // [Installation](#installation)
+    // [Usage](#usage)
+    // [Contributing](#contributing)
+    // [Tests](#tests)
+    const textMessage = `
+    # Title: ${data.title}
+    Table of Contents
+    # Description: 
+    ${data.description}
+    # Installation: 
+    ${data.installation}
+    # Usage: 
+    ${data.usage}
+    # Contributing: 
+    ${data.contribution}
+    # Tests: 
+    ${data.test}
+    Github: ${data.github}
+    Email: ${data.email}
     `
         fs.writeFile("test.README.md", textMessage, function(error){
             console.log(error)
