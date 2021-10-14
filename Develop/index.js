@@ -2,6 +2,8 @@
 const inquirer = require("inquirer");
 const Choices = require("inquirer/lib/objects/choices");
 const fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown")
+
 
 // TODO: Create an array of questions for user input
 // const questions = [];
@@ -9,27 +11,31 @@ const fs = require("fs");
 // TODO: Create a function to write README file
 // fileName, data
 function writeToFile(data) {
-    // [Description](#description)
-    // [Installation](#installation)
-    // [Usage](#usage)
-    // [Contributing](#contributing)
-    // [Tests](#tests)
+   
     const textMessage = `
-    # Title: ${data.title}
-    Table of Contents
-    # Description: 
+    ## Title: ${data.title}
+    ## Table of Contents
+    - [Description](#description)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Contributing](#contributing)
+    - [Tests](#tests)
+
+
+    ## Description: 
     ${data.description}
-    # Installation: 
+    ## Installation: 
     ${data.installation}
-    # Usage: 
+    ## Usage: 
     ${data.usage}
-    # Contributing: 
+    ## Contributing: 
     ${data.contribution}
-    # Tests: 
+    ## Tests: 
     ${data.test}
     Github: ${data.github}
     Email: ${data.email}
     `
+        //Add in data from generateMarkdown
         fs.writeFile("test.README.md", textMessage, function(error){
             console.log(error)
         })
