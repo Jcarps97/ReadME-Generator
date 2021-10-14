@@ -2,7 +2,7 @@
 const inquirer = require("inquirer");
 const Choices = require("inquirer/lib/objects/choices");
 const fs = require("fs");
-const generateMarkdown = require("./utils/generateMarkdown")
+const generateMarkdown = require("./utils/generateMarkdown");
 
 
 // TODO: Create an array of questions for user input
@@ -11,6 +11,7 @@ const generateMarkdown = require("./utils/generateMarkdown")
 // TODO: Create a function to write README file
 // fileName, data
 function writeToFile(data) {
+    const licenseSection = renderLicenseSection(license)
    
     const textMessage = `
     ## Title: ${data.title}

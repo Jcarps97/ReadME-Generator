@@ -34,7 +34,7 @@ function renderLicenseSection(license) {
     return "No license"
   } else 
     return `${license}: ${licenselink}
-    ${badge}`
+            ${badge}`
 }
 
 // TODO: Create a function to generate markdown for README
